@@ -1,4 +1,3 @@
-const { error } = require("console");
 const mongoose = require("mongoose");
 
 mongoose.connect(process.env.MONGO_URL);

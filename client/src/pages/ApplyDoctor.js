@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { hideLoading, showLoading } from "../redux/alertsSlice";
+// import { hideLoading, showLoading } from "../redux/alertsSlice";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
@@ -10,12 +10,12 @@ import moment from "moment";
 
 const ApplyDoctor = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
 
   const onFinish = async (values) => {
     try {
-      dispatch(showLoading);
+      // dispatch(showLoading);
       const response = await axios.post(
         "/api/user/apply-doctor-account",
         {
@@ -32,7 +32,7 @@ const ApplyDoctor = () => {
           },
         }
       );
-      dispatch(hideLoading);
+      // dispatch(hideLoading);
       if (response.data.success) {
         toast.success(response.data.message);
         navigate("/");
@@ -40,7 +40,7 @@ const ApplyDoctor = () => {
         toast.error(response.data.message);
       }
     } catch (error) {
-      dispatch(hideLoading);
+      // dispatch(hideLoading);
       toast.error("something went wrong");
     }
   };

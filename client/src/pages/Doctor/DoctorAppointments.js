@@ -96,7 +96,7 @@ const DoctorAppointments = () => {
       dataIndex: "actions",
       render: (text, record) => (
         <div className="d-flex">
-          {record.status === "Pending" && (
+          {record.status === "pending" && (
             <div className="d-flex">
               <h1
                 className="anchor px-2"
